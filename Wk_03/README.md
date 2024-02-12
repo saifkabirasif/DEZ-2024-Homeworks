@@ -24,7 +24,7 @@ Question 1: What is count of records for the 2022 Green Taxi Data??
 ```sql
 
 SELECT count(*) Counts 
-FROM `de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_2022_external`;
+FROM `my-zoomcamp-project-2024.ny_taxi.green_taxi_2022_external`;
 ```
 
 ## Question 2:
@@ -41,11 +41,11 @@ What is the estimated amount of data that will be read when this query is execut
 ```sql
 -- External Table
 select count(distinct PULocationID) counts
-FROM `de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_2022_external`;
+FROM `my-zoomcamp-project-2024.ny_taxi.green_taxi_2022_external`;
 
 -- Table Non-Partitioned
 select count(distinct PULocationID) counts
-FROM de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_nonpartitioned;
+FROM my-zoomcamp-project-2024.ny_taxi.green_taxi_nonpartitioned;
 ```
 
 ## Question 3:
@@ -59,7 +59,7 @@ How many records have a fare_amount of 0?
 
 ```sql
 select count(*) Count_of_Zero_Fairs
-FROM de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_2022_nonpartitioned
+FROM my-zoomcamp-project-2024.ny_taxi.green_taxi_2022_nonpartitioned
 WHERE fare_amount=0.0
 ```
 
@@ -90,13 +90,13 @@ Choose the answer which most closely matches.</br>
 ```sql
 -- Non-partitioned
 select distinct(PULocationID)
-from `de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_2022_nonpartitioned`
+from `my-zoomcamp-project-2024.ny_taxi.green_taxi_2022_nonpartitioned`
 where lpep_pickup_date between '2022-06-01'and '2022-06-30' 
 ;
 
 -- Partitioned and clustered
 select distinct(PULocationID)
-from `de-zoomcamp-2024-gcp-412014.ny_taxi.green_taxi_2022_partitioned_clustered`
+from `my-zoomcamp-project-2024.ny_taxi.green_taxi_2022_partitioned_clustered`
 where lpep_pickup_date between '2022-06-01'and '2022-06-30' 
 ;
 ```
